@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CompuTech - Tu Tienda de Tecnología</title>
+    <link
+      rel="stylesheet"
+      href="public/lib/bootstrap-5.3.5-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="public/imgs/pc.png" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="public/imgs/pc.png" class="img-fluid me-2" width="50" />
+            <span class="text-primary">Compu</span
+            ><span class="text-light">Tech</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item px-2">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="index.html"
+                >
+                  <h2 class="text-light">INICIO</h2>
+                </a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#">
+                  <h2 class="text-light">PRODUCTOS</h2>
+                </a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#">
+                  <h2 class="text-light">LAPTOPS</h2>
+                </a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#">
+                  <h2 class="text-light">ACCESORIOS</h2>
+                </a>
+              </li>
+            </ul>
+
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-light me-2"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                <img
+                  src="public/imgs/user.png"
+                  class="img-fluid me-1"
+                  width="25"
+                />
+                <span class="d-none d-md-inline">Cuenta</span>
+              </button>
+              <a
+                class="btn btn-primary position-relative"
+                href="compras.html"
+                role="button"
+              >
+                <img
+                  src="public/imgs/cart.png"
+                  class="img-fluid me-1"
+                  width="25"
+                />
+                <span class="d-none d-md-inline">Carrito</span>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                >
+                  0
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section con Carousel -->
+      <section class="hero-section">
+        <div class="row">
+          <div class="col-12" id="contenido">
+            <!-- Contenido del carousel se cargará aquí -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Secciones del home -->
+      <div class="home-sections">
+        <!-- Features Section -->
+        <section class="features-section">
+          <div class="container">
+            <div class="row text-center mb-5">
+              <div class="col-12">
+                <h2 class="display-4 fw-bold mb-3">
+                  ¿Por qué elegir CompuTech?
+                </h2>
+                <p class="lead">Te ofrecemos la mejor experiencia de compra</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="feature-item">
+                  <div class="feature-icon">🚚</div>
+                  <h4 class="fw-bold mb-3">Envío Gratis</h4>
+                  <p>Envío gratuito en compras mayores a $50</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="feature-item">
+                  <div class="feature-icon">🛡️</div>
+                  <h4 class="fw-bold mb-3">Garantía</h4>
+                  <p>Garantía extendida en todos nuestros productos</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="feature-item">
+                  <div class="feature-icon">💳</div>
+                  <h4 class="fw-bold mb-3">Pago Seguro</h4>
+                  <p>Múltiples métodos de pago seguros</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="feature-item">
+                  <div class="feature-icon">🎧</div>
+                  <h4 class="fw-bold mb-3">Soporte 24/7</h4>
+                  <p>Atención al cliente las 24 horas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Productos Destacados -->
+        <section class="py-5">
+          <div class="container">
+            <div class="row text-center mb-5">
+              <div class="col-12">
+                <h2 class="display-4 fw-bold text-dark mb-3">
+                  Productos Destacados
+                </h2>
+                <p class="lead text-muted">Los más vendidos de la semana</p>
+              </div>
+            </div>
+            <div class="row g-4" id="productos-destacados">
+              <!-- Los productos se cargarán dinámicamente aquí -->
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                  <img
+                    src="public/imgs/alien2.avif"
+                    class="card-img-top p-3"
+                    alt="Producto"
+                  />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Laptop Gaming Pro</h5>
+                    <p class="card-text text-muted">
+                      Intel Core i7, 16GB RAM, RTX 4060
+                    </p>
+                    <div class="mt-auto">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <span class="h4 text-primary fw-bold">$1,299</span>
+                        <button class="btn btn-primary">
+                          Agregar al Carrito
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                  <img
+                    src="public/imgs/alien.avif"
+                    class="card-img-top p-3"
+                    alt="Producto"
+                  />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">PC Workstation</h5>
+                    <p class="card-text text-muted">
+                      AMD Ryzen 9, 32GB RAM, RTX 4070
+                    </p>
+                    <div class="mt-auto">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <span class="h4 text-primary fw-bold">$2,199</span>
+                        <button class="btn btn-primary">
+                          Agregar al Carrito
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                  <img
+                    src="public/imgs/alien3.avif"
+                    class="card-img-top p-3"
+                    alt="Producto"
+                  />
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Monitor Alienware</h5>
+                    <p class="card-text text-muted">
+                      QD-OLED ultraprecisa, empaquetada en un elegante monitor
+                      de 27
+                    </p>
+                    <div class="mt-auto">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <span class="h4 text-primary fw-bold">$350</span>
+                        <button class="btn btn-primary">
+                          Agregar al Carrito
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Información de la empresa -->
+          <div class="col-md-4 mb-4">
+            <div class="d-flex align-items-center mb-3">
+              <img src="public/imgs/pc.png" class="img-fluid me-2" width="40" />
+              <h4 class="text-primary fw-bold mb-0">CompuTech</h4>
+            </div>
+            <p class="mb-3">
+              Tu tienda de confianza para tecnología de vanguardia. Ofrecemos
+              los mejores productos con garantía y soporte técnico
+              especializado.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-light">
+                <i class="fab fa-facebook fs-4"></i>
+              </a>
+              <a href="#" class="text-light">
+                <i class="fab fa-twitter fs-4"></i>
+              </a>
+              <a href="#" class="text-light">
+                <i class="fab fa-instagram fs-4"></i>
+              </a>
+              <a href="#" class="text-light">
+                <i class="fab fa-youtube fs-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Enlaces rápidos -->
+          <div class="col-md-2 mb-4">
+            <h5 class="text-primary mb-3 fw-bold">Productos</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-light text-decoration-none">Laptops</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Computadoras</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Accesorios</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">Gaming</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">Ofertas</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Soporte -->
+          <div class="col-md-3 mb-4">
+            <h5 class="text-primary mb-3 fw-bold">Soporte</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Centro de Ayuda</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Garantías</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Devoluciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Soporte Técnico</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contacto -->
+          <div class="col-md-3 mb-4">
+            <h5 class="text-primary mb-3 fw-bold">Contacto</h5>
+            <p class="mb-2">📍 Av. Tecnología 123, Ciudad</p>
+            <p class="mb-2">📞 (593) 2-345-6789</p>
+            <p class="mb-2">✉️ info@computech.com</p>
+            <p class="mb-2">🕒 Lun-Vie: 9:00-18:00</p>
+            <p class="mb-2">🕒 Sáb: 9:00-14:00</p>
+          </div>
+        </div>
+
+        <hr class="border-secondary my-4" />
+
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2025 CompuTech. Todos los derechos reservados.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-light text-decoration-none me-3"
+              >Términos de Servicio</a
+            >
+            <a href="#" class="text-light text-decoration-none me-3"
+              >Política de Privacidad</a
+            >
+            <a href="#" class="text-light text-decoration-none">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  required
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="remember" />
+                <label class="form-check-label" for="remember"
+                  >Recordarme</label
+                >
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <a
+              class="btn btn-primary position-relative"
+              href="cliente.html"
+              role="button"
+              >Iniciar sesion</a
+            >
+            <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Iniciar Sesión</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./public/lib/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/cargar.js"></script>
+  </body>
+</html>
