@@ -1,0 +1,151 @@
+body {
+            min-height: 100vh;
+            background: #e3f6f5;
+            animation: bgmove 10s infinite alternate;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+
+        @keyframes bgmove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .card {
+            border-radius: 1.2rem;
+            box-shadow: 0 8px 32px 0 rgba(24, 90, 157, 0.13);
+            transition: box-shadow 0.3s, border 0.2s;
+            border: 1px solid #e0e0f0;
+            background: #fff;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 40px 0 rgba(67, 206, 162, 0.22);
+            border-color: #43cea2;
+        }
+
+        .card-header {
+            border-radius: 1.2rem 1.2rem 0 0;
+            background: #185a9d !important;
+            color: #fff !important;
+            border-bottom: none;
+        }
+
+        .btn-custom, .btn-success, .btn-danger, .btn-secondary, .btn-warning {
+            font-size: 1.08rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0.7rem;
+            border: none;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px 0 rgba(24, 90, 157, 0.07);
+        }
+
+        .btn-success {
+            background: #43cea2;
+            color: #fff;
+        }
+        .btn-success:hover {
+            filter: brightness(0.95);
+            box-shadow: 0 4px 16px 0 rgba(67, 206, 162, 0.13);
+        }
+
+        .btn-danger {
+            background: #ff5858;
+            color: #fff;
+        }
+        .btn-danger:hover {
+            filter: brightness(0.95);
+            box-shadow: 0 4px 16px 0 rgba(255, 88, 88, 0.13);
+        }
+
+        .btn-secondary {
+            background: #185a9d;
+            color: #fff;
+        }
+        .btn-secondary:hover {
+            filter: brightness(0.95);
+            box-shadow: 0 4px 16px 0 rgba(24, 90, 157, 0.13);
+        }
+
+        .btn-warning {
+            background: #ffe082;
+            color: #222;
+        }
+        .btn-warning:hover {
+            filter: brightness(0.95);
+        }
+
+        .form-control:focus {
+            border-color: #43cea2;
+            box-shadow: 0 0 0 0.2rem rgba(67, 206, 162, .13);
+        }
+
+        .list-group-item {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #e0e0f0;
+            transition: background 0.2s;
+        }
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+        .list-group-item.active {
+            background: #185a9d;
+            color: #fff;
+            border: none;
+        }
+
+        .seleccionado-badge {
+            font-size: 0.95rem;
+            margin-left: 0.5rem;
+            background: #ffbfae;
+            color: #222;
+            border-radius: 0.5rem;
+            padding: 0.2rem 0.7rem;
+        }
+
+        .shadow-lg-custom {
+            box-shadow: 0 8px 32px 0 rgba(24, 90, 157, 0.13);
+        }
+
+        .card-body form {
+            animation: fadein 0.7s;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .card-header h2,
+        .card-header h4 {
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        input[type="text"], input[type="number"] {
+            background: #f3fafd;
+            border: 1px solid #e0e0f0;
+            color: #185a9d;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            background: #fff;
+        }
+
+        .alert-info {
+            background: #ffbfae;
+            color: #b23c17;
+            border: none;
+        }

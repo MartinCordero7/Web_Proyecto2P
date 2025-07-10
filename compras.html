@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="./public/lib/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-lg-custom">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h2 class="mb-0"><i class="fas fa-shopping-cart me-2"></i>Productos en el Carrito</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="formAgregarProducto" class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <input type="text" id="nombreProducto" class="form-control"
+                                    placeholder="Nombre del producto" required>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" id="precioProducto" class="form-control" placeholder="Precio"
+                                    min="1" required>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" id="cantidadProducto" class="form-control" placeholder="Cantidad"
+                                    min="1" required>
+                            </div>
+                            <div class="col-md-2 d-flex flex-column align-items-center">
+                                <button type="submit" class="btn btn-success btn-custom w-100 mb-2">
+                                    <i class="fas fa-plus"></i> Agregar
+                                </button>
+                                <input type="file" id="fotoProducto" accept="image/*" class="form-control form-control-sm mb-1"
+                                    style="width:100%;">
+                                <button type="button" id="tomarFotoProducto" class="btn btn-secondary btn-sm w-100 mb-1">
+                                    <i class="fas fa-camera"></i> Tomar Foto
+                                </button>
+                                <img id="previewFotoProducto" src="" alt="Foto producto"
+                                    style="display:none;width:48px;height:48px;object-fit:cover;border-radius:6px;">
+                            </div>
+                        </form>
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle" id="tablaProductos">
+                                <thead>
+                                    <tr>
+                                        <th><i class="fas fa-box"></i> Nombre</th>
+                                        <th><i class="fas fa-dollar-sign"></i> Precio</th>
+                                        <th><i class="fas fa-sort-numeric-up"></i> Cantidad</th>
+                                        <th><i class="fas fa-cogs"></i> Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Productos aquí -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-end mt-3">
+                            <a href="factura.html" class="btn btn-primary btn-custom" id="finalizarCompra">
+                                <i class="fas fa-file-invoice-dollar"></i> Finalizar Compra
+                            </a>
+                            <button id="eliminarProductos" class="btn btn-danger btn-custom">
+                                <i class="fas fa-trash-alt"></i> Eliminar Todos
+                            </button>
+                            <a href="cliente.html" class="btn btn-secondary btn-custom">
+                                <i class="fas fa-arrow-left"></i> Volver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./public/lib/bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="./public/js/compras.js"></script>
+</body>
+
+</html>
