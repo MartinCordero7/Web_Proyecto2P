@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos - CompuTech</title>
+    <link rel="stylesheet" href="public/lib/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="icon" type="image/png" href="public/imgs/pc.png" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="public/imgs/pc.png" class="img-fluid me-2" width="50" />
+                    <span class="text-primary">Compu</span><span class="text-light">Tech</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item px-2">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <h2 class="text-light">INICIO</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" aria-current="page" href="productos.html">
+                                <h2 class="text-light">PRODUCTOS</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" aria-current="page" href="laptops.html">
+                                <h2 class="text-light">LAPTOPS</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" aria-current="page" href="/accesorios.html">
+                                <h2 class="text-light">ACCESORIOS</h2>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                            <img src="public/imgs/user.png" class="img-fluid me-1" width="25" />
+                            <span class="d-none d-md-inline">Cuenta</span>
+                        </button>
+                        <a class="btn btn-primary position-relative" href="compras.html" role="button">
+                            <img src="public/imgs/cart.png" class="img-fluid me-1" width="25" />
+                            <span class="d-none d-md-inline">Carrito</span>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                id="cart-count">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container py-5">
+        <h2 class="text-center mb-5 fw-bold">Productos</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="public/imgs/alien2.avif" class="card-img-top p-3" alt="Laptop Gaming Pro" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Laptop Gaming Pro</h5>
+                        <p class="card-text">Intel Core i7, 16GB RAM, RTX 4060</p>
+                        <span class="h5 text-primary fw-bold">$1,299</span>
+                        <div class="mt-3">
+                            <button class="btn btn-success agregar-carrito"
+                                data-nombre="Laptop Gaming Pro"
+                                data-precio="1299"
+                                data-img="public/imgs/alien2.avif"
+                            >Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="public/imgs/alien.avif" class="card-img-top p-3" alt="PC Workstation" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">PC Workstation</h5>
+                        <p class="card-text">AMD Ryzen 9, 32GB RAM, RTX 4070</p>
+                        <span class="h5 text-primary fw-bold">$2,199</span>
+                        <div class="mt-3">
+                            <button class="btn btn-success agregar-carrito"
+                                data-nombre="PC Workstation"
+                                data-precio="2199"
+                                data-img="public/imgs/alien.avif"
+                            >Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="public/imgs/alien3.avif" class="card-img-top p-3" alt="Monitor Alienware" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Monitor Alienware</h5>
+                        <p class="card-text">QD-OLED ultraprecisa, 27"</p>
+                        <span class="h5 text-primary fw-bold">$350</span>
+                        <div class="mt-3">
+                            <button class="btn btn-success agregar-carrito"
+                                data-nombre="Monitor Alienware"
+                                data-precio="350"
+                                data-img="public/imgs/alien3.avif"
+                            >Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+        </div>
+    </div>
+    <script>
+    function actualizarContadorCarrito() {
+        let productos = JSON.parse(localStorage.getItem('productos')) || [];
+        let total = productos.reduce((acc, p) => acc + (p.cantidad || 1), 0);
+        const badge = document.getElementById('cart-count');
+        if (badge) badge.textContent = total;
+    }
+    document.querySelectorAll('.agregar-carrito').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const nombre = this.getAttribute('data-nombre');
+            const precio = parseFloat(this.getAttribute('data-precio'));
+            const foto = this.getAttribute('data-img');
+            let productos = JSON.parse(localStorage.getItem('productos')) || [];
+            let idx = productos.findIndex(p => p.nombre === nombre);
+            if (idx !== -1) {
+                productos[idx].cantidad += 1;
+            } else {
+                productos.push({ nombre, precio, cantidad: 1, foto });
+            }
+            localStorage.setItem('productos', JSON.stringify(productos));
+            this.textContent = "¡Agregado!";
+            actualizarContadorCarrito();
+            setTimeout(() => this.textContent = "Agregar al carrito", 1000);
+        });
+    });
+    // Inicializar contador al cargar
+    actualizarContadorCarrito();
+    </script>
+</body>
+
+</html>

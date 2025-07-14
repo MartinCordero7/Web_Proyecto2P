@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accesorios - CompuTech</title>
+    <link rel="stylesheet" href="public/lib/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="icon" type="image/png" href="public/imgs/pc.png" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="public/imgs/pc.png" class="img-fluid me-2" width="50" />
+                    <span class="text-primary">Compu</span><span class="text-light">Tech</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item px-2">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                <h2 class="text-light">INICIO</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" aria-current="page" href="productos.html">
+                                <h2 class="text-light">PRODUCTOS</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" aria-current="page" href="laptops.html">
+                                <h2 class="text-light">LAPTOPS</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" aria-current="page" href="/accesorios.html">
+                                <h2 class="text-light">ACCESORIOS</h2>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                            <img src="public/imgs/user.png" class="img-fluid me-1" width="25" />
+                            <span class="d-none d-md-inline">Cuenta</span>
+                        </button>
+                        <a class="btn btn-primary position-relative" href="compras.html" role="button">
+                            <img src="public/imgs/cart.png" class="img-fluid me-1" width="25" />
+                            <span class="d-none d-md-inline">Carrito</span>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                id="cart-count">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container py-5">
+        <h2 class="text-center mb-5 fw-bold">Accesorios</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="public/imgs/mouseg.jpg" class="card-img-top p-3" alt="Mouse Gamer" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Mouse Gamer RGB</h5>
+                        <p class="card-text">Sensor óptico, 7 botones, luces LED</p>
+                        <span class="h5 text-primary fw-bold">$25</span>
+                        <div class="mt-3">
+                            <button class="btn btn-success agregar-carrito"
+                                data-nombre="Mouse Gamer RGB"
+                                data-precio="25"
+                                data-img="public/imgs/mouse.jpg"
+                            >Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="public/imgs/Teclado.png" class="card-img-top p-3" alt="Teclado Mecánico" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Teclado Mecánico</h5>
+                        <p class="card-text">Switches azules, retroiluminado</p>
+                        <span class="h5 text-primary fw-bold">$45</span>
+                        <div class="mt-3">
+                            <button class="btn btn-success agregar-carrito"
+                                data-nombre="Teclado Mecánico"
+                                data-precio="45"
+                                data-img="public/imgs/teclado.jpg"
+                            >Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="public/imgs/audifonos.jpg" class="card-img-top p-3" alt="Audífonos Bluetooth" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Audífonos Bluetooth</h5>
+                        <p class="card-text">Cancelación de ruido, batería 20h</p>
+                        <span class="h5 text-primary fw-bold">$60</span>
+                        <div class="mt-3">
+                            <button class="btn btn-success agregar-carrito"
+                                data-nombre="Audífonos Bluetooth"
+                                data-precio="60"
+                                data-img="public/imgs/audifonos.jpg"
+                            >Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+        </div>
+    </div>
+    <script src="public/lib/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="public/js/login.js"></script>
+</body>
+</html>

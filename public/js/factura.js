@@ -1,12 +1,20 @@
 const clientes = JSON.parse(localStorage.getItem('clientes')) || [];
-const seleccionado = parseInt(localStorage.getItem('clienteSeleccionado'));
+let seleccionado = parseInt(localStorage.getItem('clienteSeleccionado'));
+if (isNaN(seleccionado)) {
+    // Si hay sesión, seleccionar automáticamente el cliente logueado
+    const sesion = parseInt(localStorage.getItem('sesionCliente'));
+    if (!isNaN(sesion)) {
+        seleccionado = sesion;
+        localStorage.setItem('clienteSeleccionado', sesion);
+    }
+}
 const cliente = (!isNaN(seleccionado) && clientes[seleccionado]) ? clientes[seleccionado] : null;
 const datosCliente = document.getElementById('datosCliente');
 if (cliente && datosCliente) {
     datosCliente.innerHTML = `
         <strong>Cliente:</strong> ${cliente.nombre} ${cliente.apellido}<br>
         <strong>Teléfono:</strong> ${cliente.telefono}<br>
-        <strong>Dirección:</strong> ${cliente.direccion}
+        <strong>Dirección:</strong> ${cliente.ubicacion || ''}
     `;
 } else if (datosCliente) {
     datosCliente.innerHTML = `<span class="text-danger">No hay cliente seleccionado.</span>`;
@@ -69,5 +77,7 @@ function mostrarNotificacion(mensaje) {
 if (btnEnviarFactura) {
     btnEnviarFactura.addEventListener('click', function() {
         mostrarNotificacion('¡Factura enviada correctamente!');
+        // Vaciar carrito para nueva compra
+        localStorage.removeItem('productos');
     });
 }

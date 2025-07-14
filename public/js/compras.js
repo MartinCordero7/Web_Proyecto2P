@@ -213,5 +213,20 @@ if (btnEliminarProductos) {
     });
 }
 
+// Asegurar que si hay sesión, el cliente esté seleccionado automáticamente antes de finalizar compra.
+const btnFinalizarCompra = document.getElementById('finalizarCompra');
+if (btnFinalizarCompra) {
+    btnFinalizarCompra.addEventListener('click', function() {
+        let seleccionado = parseInt(localStorage.getItem('clienteSeleccionado'));
+        if (isNaN(seleccionado)) {
+            const sesion = parseInt(localStorage.getItem('sesionCliente'));
+            if (!isNaN(sesion)) {
+                localStorage.setItem('clienteSeleccionado', sesion);
+            }
+        }
+        // Redirigir a factura.html (si es <a> ya lo hace)
+    });
+}
+
 // Mostrar productos al cargar la página
 mostrarProductos();

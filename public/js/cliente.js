@@ -4,16 +4,17 @@ document.getElementById('guardarCliente').addEventListener('click', function() {
     const telefono = document.getElementById('telefonoCliente').value.trim();
     const email = document.getElementById('emailCliente').value.trim();
     const ubicacion = document.getElementById('ubicacionCliente').value.trim();
+    const contrasena = document.getElementById('contrasenaCliente').value.trim();
     // fotoBase64 ya está en variable global
 
     if (editandoClienteIdx !== null) {
         const clientes = JSON.parse(localStorage.getItem('clientes')) || [];
-        clientes[editandoClienteIdx] = { nombre, apellido, telefono, email, ubicacion, foto: fotoBase64 };
+        clientes[editandoClienteIdx] = { nombre, apellido, telefono, email, ubicacion, contrasena, foto: fotoBase64 };
         localStorage.setItem('clientes', JSON.stringify(clientes));
         editandoClienteIdx = null;
         this.innerHTML = '<i class="fas fa-save"></i> Guardar Cliente';
     } else {
-        const cliente = { nombre, apellido, telefono, email, ubicacion, foto: fotoBase64 };
+        const cliente = { nombre, apellido, telefono, email, ubicacion, contrasena, foto: fotoBase64 };
         const clientes = JSON.parse(localStorage.getItem('clientes')) || [];
         clientes.push(cliente);
         localStorage.setItem('clientes', JSON.stringify(clientes));
@@ -24,6 +25,7 @@ document.getElementById('guardarCliente').addEventListener('click', function() {
     document.getElementById('telefonoCliente').value = '';
     document.getElementById('emailCliente').value = '';
     document.getElementById('ubicacionCliente').value = '';
+    document.getElementById('contrasenaCliente').value = '';
     fotoBase64 = '';
     document.getElementById('previewFoto').src = '';
     document.getElementById('previewFoto').style.display = 'none';
@@ -200,6 +202,7 @@ function cargarClienteEnFormulario(idx) {
     document.getElementById('telefonoCliente').value = cliente.telefono;
     document.getElementById('emailCliente').value = cliente.email || '';
     document.getElementById('ubicacionCliente').value = cliente.ubicacion || '';
+    document.getElementById('contrasenaCliente').value = cliente.contrasena || '';
     fotoBase64 = cliente.foto || '';
     if (fotoBase64) {
         document.getElementById('previewFoto').src = fotoBase64;
